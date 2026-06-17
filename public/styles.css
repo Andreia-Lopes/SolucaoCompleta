@@ -1,0 +1,47 @@
+body{
+    background-color: #1F1F1F;
+}
+.linhaObrigatoria{
+    color: #E0E0E0;
+}
+#carouselExampleCaptions{
+    background-color: #404040;
+}
+.cardjsMerc{
+    background-color: #000000;
+    border-radius: 20px;
+    color: #E0E0E0;
+}
+.cardjsGPs{
+    background-color: #E0E0E0;
+    border-radius: 20px;
+    color: #1F1F1F;
+}
+.cardjFer{
+    background-color: #a30000;
+    border-radius: 20px;
+    color: #000000;
+}
+.cardjsMc{
+    background-color: #fb8c04;
+    border-radius: 20px;
+    color: #000000;
+}
+.cardjsRB{
+    background-color: #2b3034;
+    border-radius: 20px;
+    color: #E0E0E0;
+}
+#footer{
+    background-color: #404040;
+    border-radius: 10px;
+    color: #E0E0E0;
+}
+/*Login
+.corpoLogin{
+    background-image: url("img/bckgdcolor.jpg");
+    opacity: 90%;
+}*/
+.login-card{
+    color: #E0E0E0;
+}
