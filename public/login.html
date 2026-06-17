@@ -7,7 +7,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="corpoLogin">
+<body>
+    <nav class="navbar" id="cabecalho">
+      <a class="navbar-brand" href="index.html">
+        <i class="fa-solid fa-angle-left" style="color: #e0e0e0;"></i>
+      </a>
+    </nav>
   <div class="d-flex justify-content-center align-items-center mt-5">
     <div class="login-card col-3">
             <div class="login-header mb-4">
@@ -34,6 +39,14 @@
             </div>
         <form id="formCadastro">
             <div class="mb-3">
+                <label for="CadastroLogin" class="form-label campo-label">Login</label>
+                <input type="text" id="CadastroLogin" class="form-control campo-input" placeholder="..." required>
+            </div>
+            <div class="mb-3">
+                <label for="CadastroNome" class="form-label campo-label">Nome Completo</label>
+                <input type="text" id="CadastroNome" class="form-control campo-input" placeholder="Seu Nome" required>
+            </div>
+            <div class="mb-3">
                 <label for="CadastroEmail" class="form-label campo-label">E-mail</label>
                 <input type="email" id="CadastroEmail" class="form-control campo-input" placeholder="seu@email.com" required>
             </div>
@@ -42,7 +55,7 @@
                 <input type="password" id="CadastroSenha" class="form-control campo-input" placeholder="..." required>
             </div>
             <div id="erroCadastro" class="erro-msg mb-3 d-none"></div>
-            <button type="submit" class="btn-entrar w-100 rounded border border-0 mb-4">Entrar</button>
+            <button type="submit" class="btn-cadastro w-100 rounded border border-0 mb-4">Cadastrar</button>
         </form>
         </div>
         </div>

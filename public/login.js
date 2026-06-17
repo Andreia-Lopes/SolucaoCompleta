@@ -11,9 +11,11 @@ document.getElementById("formLogin").addEventListener("submit", function (event)
   // Administrador
   if (login === ADMIN.login && senha === ADMIN.senha) 
     {
-        sessionStorage.setItem("usuarioLogado", JSON.stringify({ perfil: "admin", login: ADMIN.login }));
-        window.location.href = "cadastro_itens.html";
-        return;
+      const linkCadastroItens = document.querySelector("linkAdmin");
+      linkCadastroItens.style.display = 'block';
+      sessionStorage.setItem("usuarioLogado", JSON.stringify({ perfil: "admin", login: ADMIN.login }));
+      window.location.href = "index.html";
+      return;
     }
   // Usuários
   const users = JSON.parse(localStorage.getItem("usuarios")) || [];
@@ -23,10 +25,10 @@ document.getElementById("formLogin").addEventListener("submit", function (event)
         sessionStorage.setItem("usuarioLogado", JSON.stringify({
         perfil: "usuario",
         id: user.id,
-        nome: user.nome,
         login: user.login,
-        cargo: user.cargo,
-        departamento: user.departamento
+        nome: user.nome,
+        email: user.email,
+        senha: user.senha
         }));
         window.location.href = "index.html";
         return;
@@ -37,10 +39,16 @@ document.getElementById("formLogin").addEventListener("submit", function (event)
 });
 
 const cadastrar = document.getElementById("cadastroUsuario");
-const divCadastro = document.getElementById("cadastro-card");
+const divCadastro = document.querySelector(".cadastro-card");
+const loginCard = document.querySelector(".login-card");
 cadastrar.addEventListener("click", function (event) {
+  divCadastro.style.display = 'block';
+  loginCard.style.display = 'none';
+});
 
-    window.location.href = "index.html";
+const envioCadastro = document.querySelector(".btn-cadastro");
+document.getElementById("formCadastro").addEventListener("submit", function (event) {
+
 });
 // Limpa erro
 document.getElementById("login").addEventListener("input", limparErro);

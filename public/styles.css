@@ -1,8 +1,14 @@
 body{
     background-color: #1F1F1F;
 }
-.linhaObrigatoria{
-    color: #E0E0E0;
+.linkAdmin{
+    display: none;
+}
+.linkLogin{
+    display: none;
+}
+.linkLogout{
+    display: none;
 }
 #carouselExampleCaptions{
     background-color: #404040;
@@ -37,11 +43,11 @@ body{
     border-radius: 10px;
     color: #E0E0E0;
 }
-/*Login
-.corpoLogin{
-    background-image: url("img/bckgdcolor.jpg");
-    opacity: 90%;
-}*/
 .login-card{
     color: #E0E0E0;
+}
+.cadastro-card{
+    display: none;
+    color: #E0E0E0;
+
 }
