@@ -3,7 +3,7 @@ const infos = {
     { 
       id: 1 ,
       noticia: ["Grandes Prêmios"], 
-      imagem: "img/Australia.png", 
+      imagem: "assets/img/Australia.png", 
       titulo: "Austrália", 
       situado: "📍 Albert Park, Melbourne", 
       extensao: 5.303, 
@@ -13,7 +13,7 @@ const infos = {
     {
       id: 2 ,
       noticia: ["Grandes Prêmios"], 
-      imagem: "img/China Shanghai.jpg", 
+      imagem: "assets/img/China Shanghai.jpg", 
       titulo: "China", 
       situado: "📍 Shanghai, China", 
       extensao: 5.451, 
@@ -23,7 +23,7 @@ const infos = {
     {
       id: 3 ,
       noticia: ["Grandes Prêmios"], 
-      imagem: "img/Japão.jpg", 
+      imagem: "assets/img/Japão.jpg", 
       titulo: "Japão", 
       situado: "📍 Suzuka, Japão", 
       extensao: 5.807, 
@@ -33,7 +33,7 @@ const infos = {
     {
       id: 4 ,
       noticia: ["Grandes Prêmios"], 
-      imagem: "img/Bahein.jpg", 
+      imagem: "assets/img/Bahein.jpg", 
       titulo: "Bahein", 
       situado: "📍 Sakhir, Bahrein", 
       extensao: 5.412, 
@@ -43,7 +43,7 @@ const infos = {
     {
       id: 5 ,
       noticia: ["Grandes Prêmios"], 
-      imagem: "img/Jeddah.jpg", 
+      imagem: "assets/img/Jeddah.jpg", 
       titulo: "Jeddah", 
       situado: "📍 Jeddah, Arábia Saudita", 
       extensao: 5.154, 
@@ -53,7 +53,7 @@ const infos = {
     {
       id: 6 ,
       noticia: ["Grandes Prêmios"], 
-      imagem: "img/Miami.jpg", 
+      imagem: "assets/img/Miami.jpg", 
       titulo: "Miami", 
       situado: "📍 Miami, Estados Unidos", 
       extensao: 5.412, 
@@ -63,7 +63,7 @@ const infos = {
     {
       id: 7 ,
       noticia: ["Grandes Prêmios"], 
-      imagem: "img/Canada.jpg", 
+      imagem: "assets/img/Canada.jpg", 
       titulo: "Canadá", 
       situado: "📍 Montreal, Canadá", 
       extensao: 4.361, 
@@ -73,7 +73,7 @@ const infos = {
     {
       id: 8 ,
       noticia: ["Grandes Prêmios"], 
-      imagem: "img/Monaco.jpg", 
+      imagem: "assets/img/Monaco.jpg", 
       titulo: "Mônaco", 
       situado: "📍 Monte Carlo, Mônaco", 
       extensao: 3.337, 
@@ -83,7 +83,7 @@ const infos = {
     {
       id: 9 ,
       noticia: ["Equipes"],
-      imagem: "img/Mercedes f1 Team.jpg",
+      imagem: "assets/img/Mercedes f1 Team.jpg",
       titulo: "Mercedes-AMG Petronas Formula One Team",
       situado: "📍 Base: Brackley, Reino Unido",
       motor: "⚙️ Motor: Mercedes",
@@ -93,7 +93,7 @@ const infos = {
     {
         id: 10 ,
         noticia: ["Equipes"],
-        imagem: "img/Ferrari.jpg",
+        imagem: "assets/img/Ferrari.jpg",
         titulo: "Scuderia Ferrari HP",
         situado: "📍 Base: Maranello, Itália",
         motor: "⚙️ Motor: Ferrari",
@@ -103,7 +103,7 @@ const infos = {
     {
         id: 11 ,
         noticia: ["Equipes"],
-        imagem: "img/Mclaren.jpg",
+        imagem: "assets/img/Mclaren.jpg",
         titulo: "McLaren Mastercard F1 Team",
         situado: "📍 Base: Woking, Inglaterra",
         motor: "⚙️ Motor: Mercedes",
@@ -113,7 +113,7 @@ const infos = {
     {
         id: 12 ,
         noticia: ["Equipes"],
-        imagem: "img/Red Bull Racing.jpg",
+        imagem: "assets/img/Red Bull Racing.jpg",
         titulo: "Oracle Red Bull Racing",
         situado: "📍 Base: Milton Keynes, Inglaterra",
         motor: "⚙️ Motor: Ford Red Bull",
