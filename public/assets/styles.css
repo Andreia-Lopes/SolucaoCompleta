@@ -1,52 +1,112 @@
 body{
     background-color: #1F1F1F;
+    color: #E0E0E0;
 }
-.linkAdmin{
-    display: none;
+
+#cabecalho {
+    background-color: #1F1F1F;
 }
-.linkLogin{
-    display: none;
+.navbar-brand, .nav-link {
+    color: #E0E0E0 !important;
 }
-.linkLogout{
-    display: none;
-}
-#carouselExampleCaptions{
+
+#carrossel{
     background-color: #404040;
+    min-height: 80px;
 }
-.cardjsMerc{
-    background-color: #000000;
-    border-radius: 20px;
+/**/
+
+.card-item {
+    background-color: #2b2b2b;
+    border-radius: 16px;
+    padding: 1rem;
     color: #E0E0E0;
+    height: 100%;
 }
-.cardjsGPs{
-    background-color: #E0E0E0;
-    border-radius: 20px;
-    color: #1F1F1F;
+.card-img-top {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
-.cardjFer{
-    background-color: #a30000;
-    border-radius: 20px;
-    color: #000000;
-}
-.cardjsMc{
-    background-color: #fb8c04;
-    border-radius: 20px;
-    color: #000000;
-}
-.cardjsRB{
-    background-color: #2b3034;
-    border-radius: 20px;
-    color: #E0E0E0;
-}
+
 #footer{
     background-color: #404040;
     border-radius: 10px;
     color: #E0E0E0;
 }
-.login-card{
+/* ===== Pesquisa ===== */
+#campoPesquisa {
+    max-width: 320px;
+}
+ 
+/* ===== Favoritos (coração) ===== */
+.btn-favorito {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+}
+.btn-favorito.favoritado {
+    color: #e63946;
+}
+ 
+.btn-favorito-detalhe {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #404040;
+    color: #E0E0E0;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.btn-favorito-detalhe.favoritado {
+    background-color: #e63946;
+    color: #ffffff;
+}
+ 
+/* ===== Login / Cadastro de usuário / Cadastro de itens ===== */
+.login-card, .cadastro-card, .form-cadastro {
+    background-color: #2b2b2b;
+    border-radius: 16px;
     color: #E0E0E0;
 }
-.cadastro-card{
+.cadastro-card {
     display: none;
+}
+.campo-input {
+    background-color: #1F1F1F;
     color: #E0E0E0;
+    border: 1px solid #555;
+}
+.campo-input:focus {
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+    border-color: #888;
+    box-shadow: none;
+}
+.btn-entrar, .btn-cadastrar, .btn-cadastro {
+    background-color: #e63946;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.6rem 0;
+}
+.btn-entrar:hover, .btn-cadastrar:hover, .btn-cadastro:hover {
+    background-color: #c92f3b;
+}
+.erro-msg {
+    color: #ff6b6b;
+    font-size: 0.9rem;
 }

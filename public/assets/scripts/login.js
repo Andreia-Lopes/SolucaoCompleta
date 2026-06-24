@@ -1,60 +1,60 @@
-const ADMIN = {
-  login: "admin",
-  senha: "123",
-  perfil: "admin"
-};
+if (getUsuarioLogado()) 
+  {
+    window.location.href = "index.html"; // Se o usuário já estiver logado volta para a home
+  }
 
-document.getElementById("formLogin").addEventListener("submit", function (event) {
-  event.preventDefault();
+const formLogin = document.getElementById("formLogin");
+const formCadastro = document.getElementById("formCadastro");
+const cadastroCard = document.querySelector(".cadastro-card");
+const loginCard = document.querySelector(".login-card");
+
+document.getElementById("cadastroUsuario").addEventListener("click", function (e) {
+  e.preventDefault();
+  cadastroCard.style.display = "block";
+  loginCard.style.display = "none";
+});
+
+formLogin.addEventListener("submit", function (e) {
+  e.preventDefault();
   const login = document.getElementById("login").value.trim();
   const senha = document.getElementById("loginSenha").value;
-  // Administrador
-  if (login === ADMIN.login && senha === ADMIN.senha) 
+  const erro = document.getElementById("erroLogin");
+
+  const usuario = getUsuarios().find(function (u) { return u.login === login && u.senha === senha; });
+  if (!usuario) 
     {
-      const linkCadastroItens = document.querySelector("linkAdmin");
-      linkCadastroItens.style.display = 'block';
-      sessionStorage.setItem("usuarioLogado", JSON.stringify({ perfil: "admin", login: ADMIN.login }));
-      window.location.href = "index.html";
+      erro.textContent = "Login ou senha incorretos. Verifique seus dados e tente novamente.";
+      erro.classList.remove("d-none");
       return;
     }
-  // Usuários
-  const users = JSON.parse(localStorage.getItem("usuarios")) || [];
-  const user = users.find(f => f.login === login && f.senha === senha);
-  if (user) 
+
+  definirUsuarioLogado({ id: usuario.id, login: usuario.login, nome: usuario.nome, email: usuario.email, admin: !!usuario.admin });
+  window.location.href = "index.html";
+});
+
+formCadastro.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const login = document.getElementById("CadastroLogin").value.trim();
+  const nome = document.getElementById("CadastroNome").value.trim();
+  const email = document.getElementById("CadastroEmail").value.trim();
+  const senha = document.getElementById("CadastroSenha").value;
+  const erro = document.getElementById("erroCadastro");
+
+  const usuarios = getUsuarios();
+  if (usuarios.some(function (u) { return u.login === login; })) 
     {
-        sessionStorage.setItem("usuarioLogado", JSON.stringify({
-        perfil: "usuario",
-        id: user.id,
-        login: user.login,
-        nome: user.nome,
-        email: user.email,
-        senha: user.senha
-        }));
-        window.location.href = "index.html";
-        return;
+      erro.textContent = "Este login já está em uso. Escolha outro.";
+      erro.classList.remove("d-none");
+      return;
     }
-  // Inválidas
-  erroDiv.textContent = "Login ou senha incorretos. Verifique seus dados e tente novamente.";
-  erroDiv.classList.remove("d-none");
+
+  const novoUsuario = { id: "u" + Date.now(), login: login, senha: senha, nome: nome, email: email, admin: false };
+  usuarios.push(novoUsuario);
+  salvarUsuarios(usuarios);
+
+  definirUsuarioLogado({ id: novoUsuario.id, login: login, nome: nome, email: email, admin: false });
+  window.location.href = "index.html";
 });
 
-const cadastrar = document.getElementById("cadastroUsuario");
-const divCadastro = document.querySelector(".cadastro-card");
-const loginCard = document.querySelector(".login-card");
-cadastrar.addEventListener("click", function (event) {
-  divCadastro.style.display = 'block';
-  loginCard.style.display = 'none';
-});
-
-const envioCadastro = document.querySelector(".btn-cadastro");
-document.getElementById("formCadastro").addEventListener("submit", function (event) {
-
-});
-// Limpa erro
-document.getElementById("login").addEventListener("input", limparErro);
-document.getElementById("loginSenha").addEventListener("input", limparErro);
-function limparErro() {
-  const erroDiv = document.getElementById("erroLogin");
-  erroDiv.textContent = "";
-  erroDiv.classList.add("d-none");
-}
+document.getElementById("login").addEventListener("input", function () { document.getElementById("erroLogin").classList.add("d-none"); });
+document.getElementById("CadastroLogin").addEventListener("input", function () { document.getElementById("erroCadastro").classList.add("d-none"); });
